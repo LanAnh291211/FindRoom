@@ -36,11 +36,11 @@ export default {
     name() {
       return this.selectedRoom.name;
     },
-    areas() {
-      return this.selectedRoom.areas;
+    conditons() {
+      return this.selectedRoom.conditons;
     },
-    rate() {
-      return this.selectedRoom.hourlyRate;
+    price() {
+      return this.selectedRoom.price;
     },
     description() {
       return this.selectedRoom.description;
@@ -51,7 +51,7 @@ export default {
   },
   created() {
     this.selectedRoom = this.$store.getters['rooms/rooms'].find(
-      (coach) => coach.id === this.id
+      (room) => room.id === this.id
     );
   },
 };
