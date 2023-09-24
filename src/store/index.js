@@ -1,5 +1,4 @@
 import { createStore } from 'vuex';
-
 import requestsModule from './modules/requests/index.js';
 import roomsModule from './modules/rooms/index.js';
 
