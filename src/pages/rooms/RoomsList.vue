@@ -15,16 +15,17 @@
         <div v-if="isLoading">
           <base-spinner></base-spinner>
         </div>
+
         <ul v-else-if="hasRooms">
           <room-item
             v-for="room in filteredRooms"
             :key="room.id"
             :id="room.id"
-            :first-name="room.firstName"
-            :last-name="room.lastName"
-            :rate="room.hourlyRate"
-            :areas="room.areas"
+            :name="room.name"
+            :price="room.price"
+            :conditions="room.conditions"
           ></room-item>
+          
         </ul>
         <h3 v-else>No Rooms found.</h3>
       </base-card>
@@ -58,6 +59,7 @@ export default {
     },
     filteredRooms() {
       const rooms = this.$store.getters['rooms/rooms'];
+      console.log(rooms);
       return rooms.filter((room) => {
         if (this.activeFilters.light && room.conditions.includes('light')) {
           return true;
@@ -81,6 +83,12 @@ export default {
   methods: {
     setFilters(updatedFilters) {
       this.activeFilters = updatedFilters;
+    },
+    a (){
+      const rooms = this.$store.getters['rooms/rooms'];
+      const roomsLength = rooms ? rooms.length : 0;
+      console.log(roomsLength);
+
     },
     async loadRooms(refresh = false) {
       this.isLoading = true;

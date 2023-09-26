@@ -4,7 +4,7 @@ import roomsModule from './modules/rooms/index.js';
 
 const store = createStore({
   modules: {
-    roomes: roomsModule,
+    rooms: roomsModule,
     requests: requestsModule
   },
   state() {

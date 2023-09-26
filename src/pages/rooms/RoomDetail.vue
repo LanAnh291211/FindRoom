@@ -3,7 +3,7 @@
     <section>
       <base-card>
         <h2>{{ name }}</h2>
-        <h3>${{ rate }}/hour</h3>
+        <h3>${{ price }}/hour</h3>
       </base-card>
     </section>
     <section>
@@ -36,8 +36,8 @@ export default {
     name() {
       return this.selectedRoom.name;
     },
-    conditons() {
-      return this.selectedRoom.conditons;
+    conditions() {
+      return this.selectedRoom.conditions;
     },
     price() {
       return this.selectedRoom.price;

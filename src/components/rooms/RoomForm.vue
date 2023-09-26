@@ -70,11 +70,8 @@ export default {
   emits: ['save-data'],
   data() {
     return {
-      firstName: {
-        val: '',
-        isValid: true,
-      },
-      lastName: {
+    
+      name: {
         val: '',
         isValid: true,
       },
@@ -99,12 +96,9 @@ export default {
     },
     validateForm() {
       this.formIsValid = true;
-      if (this.firstName.val === '') {
-        this.firstName.isValid = false;
-        this.formIsValid = false;
-      }
-      if (this.lastName.val === '') {
-        this.lastName.isValid = false;
+    
+      if (this.name.val === '') {
+        this.name.isValid = false;
         this.formIsValid = false;
       }
       if (this.description.val === '') {
@@ -128,12 +122,12 @@ export default {
       }
 
       const formData = {
-        first: this.firstName.val,
-        last: this.lastName.val,
+        name: this.name.val,
         desc: this.description.val,
         price: this.price.val,
         conditions: this.conditions.val,
       };
+      console.log(formData );
 
       this.$emit('save-data', formData);
     },
